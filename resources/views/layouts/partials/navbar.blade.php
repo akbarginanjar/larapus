@@ -5,7 +5,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="" class="nav-link active">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -131,23 +131,18 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-    </ul>
-    <div class="dropdown show">
-        @auth
-            <a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown">{{Auth::user()->name}}</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a class="nav-link" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
-            @else
-          <a href="#" class="d-block">Tidak Ada Nama</a>
-            @endauth
-        </div>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </li>
+    </ul>
+
   </nav>
